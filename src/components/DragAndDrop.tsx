@@ -33,7 +33,7 @@ export interface Props {
   }>
 }
 
-function DragAndDrop({ dropzoneRef,
+const DragAndDrop = ({ dropzoneRef,
   visible,
   setVisible,
   type,
@@ -51,7 +51,7 @@ function DragAndDrop({ dropzoneRef,
   onDragEnter,
   onDragOver,
   onDragLeave,
-  onDrop }: Props) {
+  onDrop }: Props):React.ReactElement => {
 
 
   useEffect(() => {
