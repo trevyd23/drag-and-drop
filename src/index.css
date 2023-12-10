@@ -2,13 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer components {
-    .buttonPrimary {
-        @apply md:w-48 w-32 h-12 flex items-center justify-center bg-black text-white hover:bg-zinc-900 text-lg font-semibold rounded-md
-       }
-
-       .buttonSecondary {
-        @apply md:w-48 w-32 h-12 flex items-center justify-center bg-[#EEEEEE] text-black text-lg font-semibold rounded-md hover:bg-gray-400
-      }
-}

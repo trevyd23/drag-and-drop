@@ -134,11 +134,11 @@ const DragAndDrop = ({ dropzoneRef,
                     </div>
                   ) : (
                     <div className='w-full items-center flex flex-row justify-between px-5 md:gap-5'>
-                      <button className='buttonPrimary' onClick={handleSubmit}>
+                      <button className='md:w-48 w-32 h-12 flex items-center justify-center bg-black text-white hover:bg-zinc-900 text-lg font-semibold rounded-md' onClick={handleSubmit}>
                         Confirm
                       </button>
 
-                      <button className='buttonSecondary' onClick={() => setImageSourceState('')}>
+                      <button className='md:w-48 w-32 h-12 flex items-center justify-center bg-[#EEEEEE] text-black text-lg font-semibold rounded-md hover:bg-gray-400' onClick={() => setImageSourceState('')}>
                         Cancel
                       </button>
 
