@@ -9,11 +9,11 @@ export interface Props {
   dropzoneRef: React.RefObject<HTMLDivElement>,
   visible: boolean,
   imageSourceState: string,
-  header: string,
+  header?: string,
   subHeader: string,
-  buttonLabel: string,
+  buttonLabel?: string,
   typeLimitationsDescription: string,
-  typeAccepts: string,
+  typeAccepts?: string,
   handleSubmit: MouseEventHandler<HTMLButtonElement>,
   setImageSourceState: React.Dispatch<React.SetStateAction<string>>,
   setVisible: React.Dispatch<React.SetStateAction<boolean>>,
@@ -29,7 +29,7 @@ export interface Props {
     onDragOver?: React.DragEventHandler<HTMLDivElement>,
     onDragLeave?: React.DragEventHandler<HTMLDivElement>,
     onDrop?: React.DragEventHandler<HTMLDivElement>,
-    ref?: React.RefObject<HTMLDivElement>,
+    dropzonRef?: React.RefObject<HTMLDivElement>,
   }>
 }
 
@@ -82,7 +82,7 @@ const DragAndDrop = ({ dropzoneRef,
                   <CustomComponent />
                 </div>) : (<CustomComponent />)
               }</React.Fragment>) :
-            (<div className='bg-[#262626cc] w-screen h-screen z-40 fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center'>
+            (<div className={`bg-[#262626cc] w-screen h-screen z-40 fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center ${type === 'normal' && 'hidden'}`}>
               <section className='bg-white w-[22rem] sm:w-[28rem] h-80 rounded-sm relative px-5' ref={dropzoneRef}>
 
                 <div className='w-full flex flex-row items-center justify-between mt-5'>
@@ -92,7 +92,7 @@ const DragAndDrop = ({ dropzoneRef,
                   </button>
                 </div>
 
-                <div className={`w-full h-1 bg-[#EEEEEE] mt-5 lg:hidden`} />
+                <div className={`w-full h-1 bg-[#EEEEEE] mt-5`} />
 
                 <div className={`w-full h-48 ${imageSourceState === '' ? 'bg-[#EEEEEE]' : 'bg-white'} flex flex-col items-center justify-center mt-5 rounded-sm gap-3`}
                   onDragEnter={onDragEnter}
@@ -100,7 +100,6 @@ const DragAndDrop = ({ dropzoneRef,
                   onDragLeave={onDragLeave}
                   onDrop={onDrop}
                 >
-
                   {imageSourceState === '' ? (
                     <>
                       <IoCloudUploadOutline className='w-8 h-8 text-black' />
