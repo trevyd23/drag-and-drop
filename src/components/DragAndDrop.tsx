@@ -119,7 +119,7 @@ const DragAndDrop = ({ dropzoneRef,
                     />)
                   }
                   {imageSourceState === '' ? (
-                    <div className='fileUploadButton'>
+                    <div className='w-24 h-9 flex bg-zinc-700 text-white rounded-md items-center justify-center hover:bg-zinc-600 border-none focus:outline-none'>
                       <label className='text-sm'>
                         {buttonLabel ? buttonLabel : 'Choose file'}
                         <input

@@ -1,8 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
-import tailwind from 'rollup-plugin-tailwindcss'
 import postcss from 'rollup-plugin-postcss'
+import tailwindcss from 'tailwindcss'
+import tailwindConfig from './tailwind.config.js'
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
 import { dts } from 'rollup-plugin-dts'
 import packageJson from './package.json' assert { type: 'json' }
@@ -30,29 +31,23 @@ export default [
         commonjs(),
         typescript({ tsconfig: "./tsconfig.json" }),
         postcss({
-            minimize: true,
-            modules: true,
-            use: {
-                sass: null,
-                stylus: null,
-                less: { javascriptEnabled: true }
-            }, 
-            extract: true
-        }),
-        tailwind({
-            input: 'src/index.css', // required
-            // Tailor the emitted stylesheet to the bundle by removing any unused CSS
-            // (highly recommended when packaging for distribution).
-            purge: true,
-          }),
-       ,
+          config: {
+            path: "./postcss.config.js",
+          },
+          extensions: [".css"],
+          minimize: true,
+          inject: {
+            insertAt: 'top',
+          },
+          plugins: [tailwindcss(tailwindConfig)]
+        })
       ], 
     },
     {
       input: "dist/esm/types/index.d.ts",
-      output: [{ file: "dist/index.d.ts", format: "esm" }],
+      output: [{ file: "dist/index.d.ts", format: "esm" } ],
       plugins: [dts()],
-      external: [/\.(css|less|scss)$/, "react", "react-dom", "react-icons"]
+      external: ["react", "react-dom", "react-icons", './index.css']
     },
   ]
 

@@ -17,7 +17,8 @@
        "moduleResolution": "node",
        "allowSyntheticDefaultImports": true,
        "emitDeclarationOnly": true,
+        "plugins": [{"name": "typescript-plugin-css-modules" }]
   },
-  "include": ["src/**/*.ts", "src/hooks/useClickOutside.tsx", "src/components/DragAnDrop.stories.tsx"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
