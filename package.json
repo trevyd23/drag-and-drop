@@ -1,0 +1,40 @@
+{
+  "name": "@trevyd23/drag-and-drop",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/trevyd23"
+  },
+  "version": "1.0.0",
+  "description": "Drag and drop react component",
+  "scripts": {
+    "rollup": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trevaughn Douglas",
+  "license": "ISC",
+  "keywords": [
+    "react"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.43",
+    "react": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "rollup": "^4.7.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-tailwindcss": "^1.0.0",
+    "tailwindcss": "^3.3.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
