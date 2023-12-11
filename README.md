@@ -52,7 +52,7 @@ const App = ():React.ReactElement => {
 
   const handleFileUpload = (event: ChangeEvent<HTMLInputElement>) => {
 
-    //Consider using a CDN service to for persisting of files logic from your application here
+    //Consider using a CDN service for the persisting of files logic here
 
     if (event.currentTarget.files && event.currentTarget.files[0]) {
         setImageSource(URL.createObjectURL(event.currentTarget.files[0]))
@@ -89,4 +89,7 @@ export default App
 
 ```
 
+## Keywords
+
+**REACT** **React Component** **Typescript**
 
