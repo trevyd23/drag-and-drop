@@ -32,4 +32,61 @@ Or with yarn:
 yarn add @trevyd23/drag-and-drop
 ```
 
+## Examples
+
+Here is a simple example of drag-and-drop being used in an app with some custom styles:
+
+```
+
+import React, { ChangeEvent, useRef, useState } from 'react'
+import './App.css'
+import { DragAndDrop } from '@trevyd23/drag-and-drop'
+
+
+
+const App = ():React.ReactElement => {
+
+  const dragRef = useRef(null)
+  const [imageSource, setImageSource] = useState('')
+  const [show, setShow] = useState(true)
+
+  const handleFileUpload = (event: ChangeEvent<HTMLInputElement>) => {
+
+    //Consider using a CDN service to for persisting of files logic from your application here
+
+    if (event.currentTarget.files && event.currentTarget.files[0]) {
+        setImageSource(URL.createObjectURL(event.currentTarget.files[0]))
+    }
+
+}
+
+  return (<div id="main">
+    <DragAndDrop
+      dropzoneRef={dragRef}
+      buttonLabel='Choose file'
+      closeOnClickOutside
+      header='Upload an image'
+      handleSubmit={(e) => console.log(e)}
+      handleFileUpload={handleFileUpload}
+      imageSourceState={imageSource}
+      setImageSourceState={setImageSource}
+      setVisible={setShow}
+      typeLimitationsDescription='Works with any .PNG, .JPG file from your device.'
+      onDragEnter={(e) => console.log(e)}
+      onDragLeave={(e) => console.log(e)}
+      onDragOver={(e) => console.log(e)}
+      onDrop={(e) => console.log(e)}
+      subHeader='Drag and drop your image here to upload'
+      typeAccepts='image/png, image/jpeg'
+      key={'someKey'}
+      visible={show}
+      type='modal' />
+      </div>
+  )
+}
+
+export default App
+
+```
+
 
