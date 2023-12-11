@@ -1,9 +1,10 @@
 {
   "name": "@trevyd23/drag-and-drop",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/trevyd23"
+    "registry": "https://npm.pkg.github.com/trevyd23",
+    "access": "public"
   },
-  "version": "1.1.4",
+  "version": "1.1.7",
   "description": "Drag and drop react component",
   "scripts": {
     "dev": "rollup -c --watch",
