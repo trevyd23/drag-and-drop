@@ -89,7 +89,4 @@ export default App
 
 ```
 
-## Keywords
-
-**REACT** **React Component** **Typescript**
 

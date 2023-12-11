@@ -14,7 +14,7 @@
   "author": "Trevaughn Douglas",
   "license": "ISC",
   "keywords": [
-    "react"
+    "react", "react-component", "drag-and-drop", "typescript"
   ],
   "type": "commonjs",
   "peerDependencies": {
