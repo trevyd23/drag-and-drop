@@ -14,7 +14,7 @@
   "author": "Trevaughn Douglas",
   "license": "ISC",
   "keywords": [
-    "react", "react-component", "drag-and-drop", "typescript"
+    "react", "react-component", "drag-and-drop", "typescript", "tailwindCSS"
   ],
   "type": "commonjs",
   "peerDependencies": {
